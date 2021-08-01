@@ -60,7 +60,7 @@ body{
 .topBanner_right{
     width: 50%;
     animation-name:slide;
-    animation-duration: 2s;
+    animation-duration: 1s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -227,14 +227,17 @@ body{
     align-items: center;
     padding: 3rem;
 }
+/* #ser_cards{
+    display: none;
+} */
 .card{
     padding: 2rem;
     display:flex;
     flex-flow: column wrap;
     justify-content:center;
     align-items: center;
-    /* display: none; */
-    display: hidden;
+    
+    
     
 }
 .fade_animation{
@@ -244,6 +247,7 @@ body{
     animation-timing-function: linear; 
 }
 .card2{
+    
     animation-delay: 2s;
 }
 .card3{

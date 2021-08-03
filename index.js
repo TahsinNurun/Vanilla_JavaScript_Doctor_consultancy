@@ -25,86 +25,208 @@ menuLinks.forEach(function (menuLink) {
     menuLink.addEventListener("click", toggleMenu)
 })
 
-// fadeIn Animation
+// fadeIn Animation for services
 
-function service_animation() {
+const scrollElements = document.querySelectorAll(".card");
 
-    // var visibleCards = document.getElementById("ser_cards");
-    // console.log(visibleCards);
-    // visibleCards.style.display = "block";
+const elementInView = (el, dividend = 1) => {
+    const elementTop = el.getBoundingClientRect().top;
 
-    var card = document.querySelectorAll(".card");
-    // card.style.display = "block";
+    return (
+        elementTop <=
+        (window.innerHeight || document.documentElement.clientHeight) / dividend
+    );
+};
 
-    
+const elementOutofView = (el) => {
+    const elementTop = el.getBoundingClientRect().top;
 
-    // card.forEach(function(x){
-    //     x.classList.add("fade_animation")
-    // })
+    return (
+        elementTop > (window.innerHeight || document.documentElement.clientHeight)
+    );
+};
 
-    for (var i = 0; i < card.length; i++) {
-        card[i].classList.add("fade_animation");
-    }
+const displayScrollElement = (element) => {
+    element.classList.add("fade_animation");
+};
 
+// const hideScrollElement = (element) => {
+//     element.classList.remove("fade_animation");
+// };
+
+const handleScrollAnimation = () => {
+    scrollElements.forEach((el) => {
+        if (elementInView(el, 1.25)) {
+            displayScrollElement(el);
+        } 
+        // else if (elementOutofView(el)) {
+        //     hideScrollElement(el)
+        // }
+    })
 }
 
+window.addEventListener("scroll", () => {
+    handleScrollAnimation();
+});
+
+// fadeIn Animation for services images
+
+const scrollImages= document.querySelectorAll(".ser_img");
+
+const imagesInView = (el, dividend = 1) => {
+    const elementTop = el.getBoundingClientRect().top;
+
+    return (
+        elementTop <=
+        (window.innerHeight || document.documentElement.clientHeight) / dividend
+    );
+};
+
+const imagesOutofView = (el) => {
+    const elementTop = el.getBoundingClientRect().top;
+
+    return (
+        elementTop > (window.innerHeight || document.documentElement.clientHeight)
+    );
+};
+
+const displayScrollImages = (element) => {
+    element.classList.add("fade_animation");
+};
+
+const hideScrollImages = (element) => {
+    element.classList.remove("fade_animation");
+};
+
+const handleScrollAnimationImages = () => {
+    scrollImages.forEach((el) => {
+        if (imagesInView(el, 1.25)) {
+            displayScrollImages(el);
+        } else if (imagesOutofView(el)) {
+            hideScrollImages(el)
+        }
+    })
+}
+
+window.addEventListener("scroll", () => {
+    handleScrollAnimationImages();
+});
+
+// fadeIn Animation for Blog cards
+
+const scrollBlogs= document.querySelectorAll(".sg_bl_crd");
+
+const blogsInView = (el, dividend = 1) => {
+    const elementTop = el.getBoundingClientRect().top;
+
+    return (
+        elementTop <=
+        (window.innerHeight || document.documentElement.clientHeight) / dividend
+    );
+};
+
+const blogsOutofView = (el) => {
+    const elementTop = el.getBoundingClientRect().top;
+
+    return (
+        elementTop > (window.innerHeight || document.documentElement.clientHeight)
+    );
+};
+
+const displayScrollBlogs = (element) => {
+    element.classList.add("fade_animation");
+};
 
 
+const handleScrollAnimationBlogs = () => {
+    scrollBlogs.forEach((el) => {
+        if (blogsInView(el, 1.25)) {
+            displayScrollImages(el);
+        } 
+    })
+}
+
+window.addEventListener("scroll", () => {
+    
+
+    handleScrollAnimationBlogs();
+
+    // var hiddenCard = document.querySelector("#ser_cards");
+    // hiddenCard.style.display = "block";
+});
+
+// fadeIn Animation for contacts
+
+const scrollContactInfo= document.querySelectorAll(".sg_info");
+
+const contactInfoInView = (el, dividend = 1) => {
+    const elementTop = el.getBoundingClientRect().top;
+
+    return (
+        elementTop <=
+        (window.innerHeight || document.documentElement.clientHeight) / dividend
+    );
+};
+
+const ContactInfoOutofView = (el) => {
+    const elementTop = el.getBoundingClientRect().top;
+
+    return (
+        elementTop > (window.innerHeight || document.documentElement.clientHeight)
+    );
+};
+
+const displayScrollContactInfo = (element) => {
+    element.classList.add("fade_animation");
+};
+
+const handleScrollAnimationContactInfo = () => {
+    scrollContactInfo.forEach((el) => {
+        if (contactInfoInView(el, 1.25)) {
+            displayScrollContactInfo(el);
+        } 
+    })
+}
+
+window.addEventListener("scroll", () => {
+    handleScrollAnimationContactInfo();
+});
+
+// Number Animation
+
+document.addEventListener("DOMContentLoaded", () => {
+    function counter(id, start, end, duration) {
+        var numAnimation = document.getElementById(id),
+
+            current = start,
+            range = end - start,
+            increment = end > start ? 1 : -1,
+            step = Math.abs(Math.floor(duration / range)),
+
+            timer = setInterval(() => {
+                current += increment;
+                numAnimation.textContent = current;
+                if (current == end) {
+                    clearInterval(timer)
+                }
+            }, step)
+    }
+
+    counter("count1", 0, 350, 2000);
+    counter("count2", 0, 99, 2000);
+    counter("count3", 0, 870, 2000);
+})
 
 
+// btn color change
 
-
-
-// // practice
-// const taskOne = (callback) => {
-//     console.log("task 1")
-//     callback()
-// }
-
-// const taskTwo = (callback) => {
-//     setTimeout(()=>{
-//         console.log("dataLoading inside settimeout task 2")
-//         callback();
-//     }, 2000);
-
-//     // console.log("task2")
-// }
-
-// const taskThree = () => {
-//     console.log("task3")
-// }
-// const taskFour = () => {
-//     console.log("task4")
-// }
-
-// // function sqr(x) {
-// //     console.log(`squre of ${x}: ${x*x}`);
-// // }
-// // sqr(9);
-
-// // function higherOrderFunction(num, callback){
-// //     callback(num);
-// // }
-
-// // higherOrderFunction( 6, sqr);
-
-// taskOne(function f1(){
-//     taskTwo(function f2(){
-//         taskThree();
+// function btnClrCng(){
+//     buttonForChangeColor = document.getElementsByClassName("card_btn");
+//     console.log(buttonForChangeColor);
+//     buttonForChangeColor.forEach((item) =>{
+//         item.style.backgroundColor = "red";
 //     });
-// })
+// }
 
-// const promise1 = new Promise((resolve, reject) => {
-//     let completedPromise = true;
-//     if(completedPromise){
-//         resolve("beshi valo");
-//     }else{
-//         reject("bodmaish kothakar")
-//     }
 
-// })
 
-// promise1.then(res=>{
-//     console.log(res);
-// });
-// console.log("end")

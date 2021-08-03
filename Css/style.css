@@ -45,6 +45,28 @@ body{
     border-radius: 1.5rem;
     border: none;
 }
+#email{
+    width: 20rem;
+}
+#sign_up_btn{
+    position:relative;
+    right: 3rem;
+}
+@media only screen and (max-width: 700px){
+    .form_field{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .form_field button {
+        margin: 1rem;
+    }
+    #sign_up_btn{
+        position:static;
+        right: 0rem;
+    }
+}
 .top_banner {
     display: flex;
     align-items: center;
@@ -220,6 +242,14 @@ body{
     justify-content: flex-end;
     align-items: center;
 }
+@media only screen and (max-width:700px){
+    .ser_intro_1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
 .ser_intro_2 {
     display: flex;
     flex-flow: column wrap;
@@ -235,24 +265,18 @@ body{
     display:flex;
     flex-flow: column wrap;
     justify-content:center;
-    align-items: center;
-    
-    
-    
+    align-items: center;   
 }
+
 .fade_animation{
     animation-name:fadeIn;
-    animation-duration: 2s;
+    animation-duration: 3s;
     animation-iteration-count: 1;
-    animation-timing-function: linear; 
+    animation-delay: calc(var(--animation-order)*40ms);
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out; 
 }
-.card2{
-    
-    animation-delay: 2s;
-}
-.card3{
-    animation-delay: 4s;
-}
+
 .card:hover{
     box-shadow: 0 2rem 2rem 0 rgba(128, 128, 128, 0.411);
     border-radius: 1rem;
@@ -280,6 +304,10 @@ body{
     font-size: .75rem;
     cursor: pointer;
 } 
+.card_btn:hover{
+    background-color: orangered;
+    color: whitesmoke;
+}
 .card ul {
     padding: 1.5rem;
 }
@@ -295,7 +323,6 @@ body{
     display: flex;
     flex-flow: row wrap;
     justify-content: center; 
-    
 }
 
 .ser_logo {
@@ -561,6 +588,7 @@ body{
 }
 
 @keyframes fadeIn {
-    from { opacity: 0}
+    from { opacity: 0;
+        transform: translateY(8rem);}
     to {opacity: 1}
 }

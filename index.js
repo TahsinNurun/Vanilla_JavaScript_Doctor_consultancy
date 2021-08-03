@@ -25,6 +25,22 @@ menuLinks.forEach(function (menuLink) {
     menuLink.addEventListener("click", toggleMenu)
 })
 
+// topBanner animation
+window.addEventListener("DOMContentLoaded",()=>{
+    topBannerLeft = document.querySelectorAll(".tb_left");
+    console.log(topBannerLeft);
+    topBannerLeft.forEach(function(item){
+        item.classList.add("fade_animation");
+    })
+})
+// about Animation 
+
+window.addEventListener("scroll",()=>{
+    about= document.querySelectorAll(".about_animation");
+    about.forEach(function(item){
+        item.classList.add("fade_animation");
+    })
+})
 // fadeIn Animation for services
 
 const scrollElements = document.querySelectorAll(".card");
@@ -212,9 +228,9 @@ document.addEventListener("DOMContentLoaded", () => {
             }, step)
     }
 
-    counter("count1", 0, 350, 2000);
-    counter("count2", 0, 99, 2000);
-    counter("count3", 0, 870, 2000);
+    counter("count1", 0, 350, 4000);
+    counter("count2", 0, 99, 4000);
+    counter("count3", 0, 870, 4000);
 })
 
 

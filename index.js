@@ -228,9 +228,9 @@ document.addEventListener("DOMContentLoaded", () => {
             }, step)
     }
 
-    counter("count1", 0, 350, 4000);
-    counter("count2", 0, 99, 4000);
-    counter("count3", 0, 870, 4000);
+    counter("count1", 0, 350, 5000);
+    counter("count2", 0, 99, 6000);
+    counter("count3", 0, 870, 5000);
 })
 
 
